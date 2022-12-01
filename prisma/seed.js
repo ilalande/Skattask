@@ -11,11 +11,6 @@ const load = async () => {
     await prisma.user.deleteMany();
     console.log('Deleted records in user table');
 
-    await prisma.task.createMany({
-      data: tasks,
-    });
-    console.log('Added task data');
-
     await prisma.user.createMany({
       data: users,
     });

@@ -4,11 +4,10 @@ export default styled.div`
   .give {
     background-color: ${({ theme }) => theme.colorButton};
     margin: 1rem 1rem 0 0;
-
     padding-left: 0.5rem;
     box-shadow: 0px 3px 10px #a3a4a5;
-    border-radius: 2rem;
-    border: 0;
+    border-radius: 5px;
+    border-color: ${({ theme }) => theme.mainColor};
     display: flex;
     align-items: center;
     padding-right: 0.5rem;
@@ -33,7 +32,7 @@ export default styled.div`
     visibility: visible;
     position: relative;
     top: 0.4rem;
-    left: 1.1rem;
+    left: 0rem;
     display: block;
     z-index: 1000;
 

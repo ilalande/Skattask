@@ -1,7 +1,15 @@
 import styled from 'styled-components';
 
 export default styled.div`
-  .give {
+background-color: ${({ theme }) => theme.secondaryColor}; 
+border-radius:5px;
+form {
+  background-color: white; 
+  border-radius:5px;
+padding:10px 10px;
+} 
+
+.give {
     background-color: ${({ theme }) => theme.colorButton};
     margin: 1rem 1rem 0 0;
 

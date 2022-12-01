@@ -4,24 +4,27 @@ export default styled.div`
   width: 100%;
 
   .title {
-    background-color: ${({ theme }) => theme.bgColorLight2};
-    box-shadow: inset 0px -1px 0px #e4e8eb;
-    padding: 0.9rem 2.2rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   h1 {
-    color: ${({ theme }) => theme.fontColorMedium};
+    background-color: ${({ theme }) => theme.mainColor};
+    color: white;
     font-size: 1.4rem;
+    box-shadow: inset 0px -1px 0px #e4e8eb;
+    padding: 1rem 2.2rem;
+    margin: 10px 20px;
+    border-radius: 5px;
+    width: 70%;
   }
 
   .endManage {
-    border: none;
     margin: 0;
-    padding: 0.7rem;
+    padding: 1rem;
     border-radius: 0.3rem;
-    margin-right: 0.5rem;
+
     display: flex;
     span {
       padding: 0.2rem;
@@ -33,12 +36,15 @@ export default styled.div`
   }
 
   .endButton {
-    background-color: ${({ theme }) => theme.bgColorLight2};
-    border: 1px solid #e2e4e7;
-
-    padding: 0.2rem 0.5rem;
+    background-color: white;
+    border: 1px solid;
+    border-color: ${({ theme }) => theme.mainColor};
+    padding: 0.5rem;
+    margin: 0.5rem;
+    margin-right: 3rem;
     display: flex;
     align-items: center;
+    border-radius: 5px;
     span {
       color: ${({ theme }) => theme.fontColorLight};
     }
@@ -46,7 +52,7 @@ export default styled.div`
   .endedButton {
     background-color: ${({ theme }) => theme.mainColor};
     color: ${({ theme }) => theme.body};
-    border: 2px solid red;
+    margin-right: 3rem;
     span {
       color: white;
     }
@@ -70,7 +76,9 @@ export default styled.div`
     background-color: ${({ theme }) => theme.colorButton};
     padding: 1rem;
 
-    border: 1px solid #e2e4e7;
+    border: 1px solid;
+    border-color: ${({ theme }) => theme.purpleLight};
+
     border-bottom: 0;
     h2 {
       color: ${({ theme }) => theme.fontColor};

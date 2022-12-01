@@ -59,13 +59,15 @@ export default function SideBar(): JSX.Element {
 
   return (
     <SSideBar>
-      <h2>Toutes les tâches</h2>
       <AddTaskForm
         placeholder='+ ajouter une tâche'
         setTitleTaskEntered={setTitleTaskEntered}
         titleTaskEntered={titleTaskEntered}
         submitFunction={addTask}
       />
+      <div className="WrapperTasks">
+      <h2>Toutes les tâches</h2>
+      
       <ul>
         {tasks
           .filter((task: ITask) => !task.ended)
@@ -90,11 +92,13 @@ export default function SideBar(): JSX.Element {
             );
           })}
       </ul>
+      </div>
+      <div className="WrapperTasksEnded">
       <div className='titleEnded'>
         <h3>Tâches terminées</h3>
         <span className='counter'>{count()}</span>
       </div>
-
+    
       <ul>
         {tasks
           .filter((task) => task.ended)
@@ -119,6 +123,7 @@ export default function SideBar(): JSX.Element {
             );
           })}
       </ul>
+      </div>
     </SSideBar>
   );
 }
