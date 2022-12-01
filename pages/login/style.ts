@@ -11,10 +11,10 @@ export default styled.div`
     margin: 0 auto;
     max-width: 1000px;
     width: 50vw;
-    padding: 1rem 3rem;
+    padding: 1rem 0;
     background-color: white;
     box-shadow: 0px 3px 10px #a3a4a5;
-    text-align: left;
+    text-align: right;
   }
 
   .login-section {

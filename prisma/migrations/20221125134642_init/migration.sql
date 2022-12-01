@@ -1,27 +1,3 @@
-/*
-  Warnings:
-
-  - The primary key for the `User` table will be changed. If it partially fails, the table could be left without primary key constraint.
-  - You are about to drop the column `firstName` on the `User` table. All the data in the column will be lost.
-  - You are about to drop the column `lastName` on the `User` table. All the data in the column will be lost.
-  - You are about to drop the column `picture` on the `User` table. All the data in the column will be lost.
-  - You are about to drop the column `userName` on the `User` table. All the data in the column will be lost.
-
-*/
--- AlterTable
-ALTER TABLE "User" DROP CONSTRAINT "User_pkey",
-DROP COLUMN "firstName",
-DROP COLUMN "lastName",
-DROP COLUMN "picture",
-DROP COLUMN "userName",
-ADD COLUMN     "emailVerified" TIMESTAMP(3),
-ADD COLUMN     "image" TEXT,
-ADD COLUMN     "name" TEXT,
-ALTER COLUMN "id" DROP DEFAULT,
-ALTER COLUMN "id" SET DATA TYPE TEXT,
-ADD CONSTRAINT "User_pkey" PRIMARY KEY ("id");
-DROP SEQUENCE "User_id_seq";
-
 -- CreateTable
 CREATE TABLE "Account" (
     "id" TEXT NOT NULL,
@@ -57,6 +33,29 @@ CREATE TABLE "VerificationToken" (
     "expires" TIMESTAMP(3) NOT NULL
 );
 
+-- CreateTable
+CREATE TABLE "User" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
+    "emailVerified" TIMESTAMP(3),
+    "image" TEXT,
+
+    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Task" (
+    "taskId" SERIAL NOT NULL,
+    "date" TEXT,
+    "title" TEXT NOT NULL,
+    "description" TEXT,
+    "ended" BOOLEAN NOT NULL,
+    "authorId" TEXT,
+
+    CONSTRAINT "Task_pkey" PRIMARY KEY ("taskId")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "Account_provider_providerAccountId_key" ON "Account"("provider", "providerAccountId");
 
@@ -69,8 +68,14 @@ CREATE UNIQUE INDEX "VerificationToken_token_key" ON "VerificationToken"("token"
 -- CreateIndex
 CREATE UNIQUE INDEX "VerificationToken_identifier_token_key" ON "VerificationToken"("identifier", "token");
 
+-- CreateIndex
+CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+
 -- AddForeignKey
 ALTER TABLE "Account" ADD CONSTRAINT "Account_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Session" ADD CONSTRAINT "Session_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Task" ADD CONSTRAINT "Task_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User"("id") ON DELETE SET NULL ON UPDATE CASCADE;

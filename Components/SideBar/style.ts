@@ -3,13 +3,33 @@ import styled from 'styled-components';
 export default styled.nav`
   width: 25vw;
   min-width: 380px;
-
+  margin-left: 20px;
   > * {
     min-height: 60px;
     width: 100%;
     margin: 0;
     padding: 1rem;
   }
+
+  .WrapperTasks {
+    padding: 0;
+    border-radius: 5px;
+
+    background-color: ${({ theme }) => theme.mainColor};
+
+    margin-top: 10px;
+    padding: 20px;
+  }
+
+  .WrapperTasksEnded {
+    padding: 0;
+    border-radius: 5px;
+
+    background-color: rgba(101, 53, 202, 0.1);
+    margin-top: 10px;
+    padding: 20px;
+  }
+
   form {
     border-bottom: 1px solid #e6e9ed;
 
@@ -51,11 +71,13 @@ export default styled.nav`
   li {
     padding: 1rem;
     padding-right: 0;
+    margin: 10px 0 10px;
+
+    background-color: ${({ theme }) => theme.bgColorLight1};
   }
   .selectedTask {
-    background-color: ${({ theme }) => theme.bgColorLight1};
-    margin-bottom: 0.5rem;
-    border-left: 3px solid #e74c3c;
+    background-color: ${({ theme }) => theme.purpleLight};
+    border-left: 5px solid black;
   }
 
   h2 {
@@ -70,11 +92,9 @@ export default styled.nav`
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background-color: ${({ theme }) => theme.mainColorLight};
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin: 0;
-    margin-top: 1rem;
-    padding: 1.5rem 0 0 1.5rem;
+
+    padding: 0.5rem 0 0 1.5rem;
     h3 {
       color: ${({ theme }) => theme.fontColor};
       font-size: 1.1rem;
