@@ -49,12 +49,13 @@ export default function Login(): JSX.Element {
         <>
           <div className='container '>
             <Image
-              src='/logo.svg'
-              width={120}
-              height={50}
+              src='/logo.png'
+              width={247}
+              height={46}
               layout='intrinsic'
               alt='todoList'
               priority
+              className=''
             />
             <div className='login-section'>
               <h1>Login</h1>

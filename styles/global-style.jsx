@@ -2,9 +2,11 @@ import { createGlobalStyle } from 'styled-components';
 export const mainTheme = {
   body: '#fffff',
   bgColorLight1: '#f7f8f9',
-  bgColorLight2: '#fafbfb', //ligther : for "titre de la tache background"
-  mainColor: '#E74C3C',
-  mainColorLight: '#db44371a',
+  bgColorLight2: '#fafbfb',
+  bgColorLight3: '#D5D1D4', //ligther : for "titre de la tache background"
+  purpleLight: '#e2d9f5',
+  mainColor: '#6535CA',
+  secondaryColor: '#FCFC62',
   mainColorSelected: '#F7F8F9',
   fontColor: '#161616',
   fontColorMedium: '#a3a4a5', // pour "titre de la tache sélectionnée sur le main"

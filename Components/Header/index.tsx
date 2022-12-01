@@ -13,15 +13,17 @@ export default function Header(): JSX.Element {
   return (
     <SHeader>
       <div className='containerGen'>
+        <div className='wrapper'>
         <div className='title'>
           <Image
             src='/logo.png'
-            width={120}
-            height={50}
+            width={247}
+              height={46}
             layout='intrinsic'
             alt='todoList'
           />
         </div>
+  
         <div className='button'>
           {selectLoggedUser && <span>{selectLoggedUser.name}</span>}
           <button
@@ -33,6 +35,7 @@ export default function Header(): JSX.Element {
           >
             sign out
           </button>
+        </div>
         </div>
       </div>
     </SHeader>
