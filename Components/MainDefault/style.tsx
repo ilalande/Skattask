@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import QUERIES from '../../styles/constant';
 
 export default styled.div`
   h1 {
