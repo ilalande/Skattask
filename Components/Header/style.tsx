@@ -12,9 +12,6 @@ export default styled.header`
     justify-content: end;
     align-items: center;
   }
-  .wrapper {
-    width: 100%;
-  }
 
   .title {
     min-width: 120px;
