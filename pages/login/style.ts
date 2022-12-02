@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import QUERIES from '../../styles/constant';
 
 export default styled.div`
   background-color: ${({ theme }) => theme.bgColorLight1};
@@ -37,5 +38,14 @@ export default styled.div`
     border: 0;
     border-radius: 0.3rem;
     display: block;
+  }
+
+  @media ${QUERIES.mobileAndLess} {
+    .container {
+      box-shadow: none;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+    }
   }
 `;
