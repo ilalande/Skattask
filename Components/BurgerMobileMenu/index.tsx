@@ -1,5 +1,5 @@
-import SSideBar from './style';
-import AddTaskForm from 'Components/AddTaskForm';
+import SBurgerMobileMenu from './style';
+
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTasks, newTasks } from '../../redux/actions/tasks.action';
@@ -7,7 +7,7 @@ import { selectTask } from '../../redux/actions/task.action';
 import { ITask } from 'custom-types/content-types';
 import { IRootState } from '../../redux/reducers/index';
 import TaskGallery from 'Components/TaskGallery';
-export default function SideBar(): JSX.Element {
+export default function BurgerMobileMenu(): JSX.Element {
   //pour récupérer le texte de la tache entré dans le input
   const [titleTaskEntered, setTitleTaskEntered] = useState<string>('');
 
@@ -58,13 +58,7 @@ export default function SideBar(): JSX.Element {
   };
 
   return (
-    <SSideBar>
-      <AddTaskForm
-        placeholder='+ ajouter une tâche'
-        setTitleTaskEntered={setTitleTaskEntered}
-        titleTaskEntered={titleTaskEntered}
-        submitFunction={addTask}
-      />
+    <SBurgerMobileMenu>
       <div className='WrapperTasks'>
         <h2>Toutes les tâches</h2>
         <TaskGallery
@@ -84,6 +78,6 @@ export default function SideBar(): JSX.Element {
           activeId={activeId}
         />
       </div>
-    </SSideBar>
+    </SBurgerMobileMenu>
   );
 }

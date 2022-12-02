@@ -4,7 +4,7 @@ import { signOut } from 'next-auth/react';
 import { IRootState } from '@redux/reducers';
 import Image from 'next/image';
 import SHeader from './style';
-
+import BurgerMobileMenu from 'Components/BurgerMobileMenu';
 export default function Header(): JSX.Element {
   //données récupérées du state, celui ci a été modifié par l'appel à l'action getLoggedUser depuis la page login
   const selectLoggedUser = useSelector(
@@ -23,13 +23,15 @@ export default function Header(): JSX.Element {
       <div className='containerGen'>
         <div className='wrapper'>
           <div className='title'>
-            <Image
-              src='/logo.png'
-              width={247}
-              height={46}
-              layout='intrinsic'
-              alt='todoList'
-            />
+            <div className='img-container'>
+              <Image
+                src='/logo.png'
+                width={247}
+                height={46}
+                layout='intrinsic'
+                alt='todoList'
+              />
+            </div>
           </div>
 
           <div className='button'>
@@ -45,19 +47,20 @@ export default function Header(): JSX.Element {
             </button>
           </div>
         </div>
-        <div className={`burgerMenu ${showLinks && 'bugerMenuShown'}`}>
-          <button
-            type='button'
-            className='burgerButton'
-            onClick={handleShowLinks}
-          >
-            <Image
-              src={showLinks ? '/Vector.svg' : '/burger-menu.svg'}
-              width={30}
-              height={30}
-            />
-          </button>
-        </div>
+      </div>
+      <div className='burgerMenu'>
+        <button
+          type='button'
+          className='burgerButton'
+          onClick={handleShowLinks}
+        >
+          <Image
+            src={showLinks ? '/Vector.svg' : '/burger-menu.svg'}
+            width={30}
+            height={30}
+          />
+        </button>
+        {showLinks && <BurgerMobileMenu />}
       </div>
     </SHeader>
   );

@@ -8,8 +8,12 @@ export default styled.header`
 
   .containerGen {
     display: flex;
+    width: 100%;
     justify-content: end;
     align-items: center;
+  }
+  .wrapper {
+    width: 100%;
   }
 
   .title {
@@ -42,21 +46,26 @@ export default styled.header`
 
     .containerGen {
       width: 100%;
+      display: block;
+    }
+    .img-container {
+      display: flex;
       justify-content: center;
+      width: fit-content;
+      margin: auto;
     }
     .burgerMenu {
       display: block;
-
-      width: fit-content;
-      align-self: flex-start;
+      width: 100%;
+      z-index: 5;
     }
 
     .burgerButton {
-      display: block;
-      border: 10px solid red;
-      width: fit-content;
       padding: 0;
       margin: 0;
+      position: absolute;
+      top: 20px;
+      right: 20px;
     }
   }
 `;
