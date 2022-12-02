@@ -1,8 +1,7 @@
 import styled from 'styled-components';
+import QUERIES from '../../styles/constant';
 
 export default styled.div`
-  width: 100%;
-
   .title {
     display: flex;
     justify-content: space-between;
@@ -57,6 +56,13 @@ export default styled.div`
       color: white;
     }
   }
+  .endButtonMobile {
+    display: none;
+  }
+  .endedButtonMobile {
+    display: none;
+  }
+
   .container {
     margin-left: 2.5rem;
     margin-right: 3rem;
@@ -122,5 +128,61 @@ export default styled.div`
   }
   .hideSaveButton {
     display: none;
+  }
+
+  @media ${QUERIES.tablettAndLess} {
+    .container {
+      margin: 0;
+      margin-left: 10px;
+    }
+    .description {
+      width: 100%;
+    }
+    input {
+      margin-left: 5px;
+    }
+    .endButton {
+      display: none;
+    }
+    .endedButton {
+      display: none;
+    }
+    .endButtonMobile {
+      display: block;
+      background-color: white;
+      width: 9rem;
+      border: 1px solid red;
+      border-color: ${({ theme }) => theme.mainColor};
+      padding: 0.5rem;
+      margin: 0.5rem;
+      margin-right: 3rem;
+      display: flex;
+      align-items: center;
+      border-radius: 5px;
+      span {
+        font-size: 0.7rem;
+      }
+    }
+    .endedButtonMobile {
+      display: block;
+      background-color: ${({ theme }) => theme.mainColor};
+      color: ${({ theme }) => theme.body};
+      padding: 0.5rem;
+      margin: 0.5rem;
+      span {
+        color: white;
+        font-size: 0.8rem;
+      }
+    }
+    .wrapperMobile {
+      display: flex;
+      justify-content: space-between;
+
+      background-color: white;
+    }
+    .saveButton {
+      background-color: white;
+      border: 0;
+    }
   }
 `;

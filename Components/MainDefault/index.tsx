@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import SMainDefault from './style';
 import { IRootState } from '@redux/reducers';
+import AddTaskForm from 'Components/AddTaskForm';
 export default function MainDefault(): JSX.Element {
   const selectLoggedUser = useSelector(
     (state: IRootState) => state.users.loggedUser
@@ -9,6 +10,8 @@ export default function MainDefault(): JSX.Element {
     <SMainDefault>
       {selectLoggedUser && (
         <>
+          <AddTaskForm />
+
           <h1>
             Bienvenue sur Todoist {selectLoggedUser.name} - selectionnez une
             tâche
