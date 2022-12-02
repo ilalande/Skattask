@@ -10,12 +10,12 @@ export default function MainDefault(): JSX.Element {
     <SMainDefault>
       {selectLoggedUser && (
         <>
-          <AddTaskForm />
-
-          <h1>
-            Bienvenue sur Todoist {selectLoggedUser.name} - selectionnez une
-            tâche
-          </h1>
+          <div className='mainBlock'>
+            <h1>
+              Bienvenue sur Todoist {selectLoggedUser.name} - selectionnez une
+              tâche
+            </h1>
+          </div>
         </>
       )}
     </SMainDefault>

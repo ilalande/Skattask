@@ -4,7 +4,7 @@ import { signOut } from 'next-auth/react';
 import { IRootState } from '@redux/reducers';
 import Image from 'next/image';
 import SHeader from './style';
-import BurgerMobileMenu from 'Components/BurgerMobileMenu';
+import BurgerMobileMenu from '../BurgerMobileMenu/index';
 export default function Header(): JSX.Element {
   //données récupérées du state, celui ci a été modifié par l'appel à l'action getLoggedUser depuis la page login
   const selectLoggedUser = useSelector(
