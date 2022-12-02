@@ -7,6 +7,7 @@ import { getTasks, newTasks } from '../../redux/actions/tasks.action';
 import { selectTask } from '../../redux/actions/task.action';
 import { ITask } from 'custom-types/content-types';
 import { IRootState } from '../../redux/reducers/index';
+import TaskGallery from 'Components/TaskGallery';
 export default function SideBar(): JSX.Element {
   //pour récupérer le texte de la tache entré dans le input
   const [titleTaskEntered, setTitleTaskEntered] = useState<string>('');
@@ -65,64 +66,24 @@ export default function SideBar(): JSX.Element {
         titleTaskEntered={titleTaskEntered}
         submitFunction={addTask}
       />
-      <div className="WrapperTasks">
-      <h2>Toutes les tâches</h2>
-      
-      <ul>
-        {tasks
-          .filter((task: ITask) => !task.ended)
-          .map((task, index) => {
-            return (
-              <li
-                key={index}
-                onClick={() => {
-                  select(task);
-                }}
-                className={
-                  activeId === task.taskId ? 'selectedTask' : 'taskList'
-                }
-              >
-                <Task
-                  title={task.title}
-                  userName={task.authorName}
-                  date={task.date}
-                  ended={task.ended}
-                />
-              </li>
-            );
-          })}
-      </ul>
+      <div className='WrapperTasks'>
+        <h2>Toutes les tâches</h2>
+        <TaskGallery
+          tasks={tasks.filter((task: ITask) => !task.ended)}
+          select={select}
+          activeId={activeId}
+        />
       </div>
-      <div className="WrapperTasksEnded">
-      <div className='titleEnded'>
-        <h3>Tâches terminées</h3>
-        <span className='counter'>{count()}</span>
-      </div>
-    
-      <ul>
-        {tasks
-          .filter((task) => task.ended)
-          .map((task, index) => {
-            return (
-              <li
-                key={index}
-                onClick={() => {
-                  select(task);
-                }}
-                className={
-                  activeId === task.taskId ? 'selectedTask' : 'taskList'
-                }
-              >
-                <Task
-                  title={task.title}
-                  date={task.date}
-                  ended={task.ended}
-                  userName={task.authorName}
-                />
-              </li>
-            );
-          })}
-      </ul>
+      <div className='WrapperTasksEnded'>
+        <div className='titleEnded'>
+          <h3>Tâches terminées</h3>
+          <span className='counter'>{count()}</span>
+        </div>
+        <TaskGallery
+          tasks={tasks.filter((task: ITask) => task.ended)}
+          select={select}
+          activeId={activeId}
+        />
       </div>
     </SSideBar>
   );
