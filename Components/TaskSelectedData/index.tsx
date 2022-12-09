@@ -99,17 +99,38 @@ export default function TaskSelectedData(): JSX.Element {
             onChange={(e) => dispatch(editDTask(e.target.value))}
           />
         </div>
-        <form onSubmit={saveTask}>
-          <div
-            className={
-              displaySaveButton ? 'saveButton' : 'saveButton hideSaveButton'
-            }
-          >
-            <button type='submit'>
-              <span>Enregistrer</span>
+        {/* Pour déplacer le bouton en version mobile */}
+        <div className='wrapperMobile'>
+          {!selectedTask.ended ? (
+            <button
+              type='submit'
+              className='endManage endButtonMobile'
+              onClick={() => handleEnding()}
+            >
+              <Image src='/end-shape.svg' width={20} height={25} alt='point' />
+              <span>Marquer comme terminé</span>
             </button>
-          </div>
-        </form>
+          ) : (
+            <button
+              type='submit'
+              className='endManage endedButtonMobile'
+              onClick={() => handleEnding()}
+            >
+              <span>Terminé</span>
+            </button>
+          )}
+          <form onSubmit={saveTask}>
+            <div
+              className={
+                displaySaveButton ? 'saveButton' : 'saveButton hideSaveButton'
+              }
+            >
+              <button type='submit'>
+                <span>Enregistrer</span>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </STaskSelectedData>
   );

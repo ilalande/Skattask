@@ -5,9 +5,14 @@ export default styled.div`
   background-color: ${({ theme }) => theme.bgColorLight1};
   padding: 0rem;
   margin: 0;
-  display: flex;
-  align-items: center;
-  min-height: 100vh;
+
+  border: 1px solid green;
+  .central {
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    border: 1px solid red;
+  }
   .container {
     margin: 0 auto;
     max-width: 1000px;
@@ -18,7 +23,7 @@ export default styled.div`
     text-align: right;
   }
 
-  .login-section {
+  .section {
     text-align: center;
     margin-top: 4rem;
   }
@@ -28,16 +33,11 @@ export default styled.div`
     font-size: 3rem;
     text-transform: uppercase;
   }
-  button {
-    margin: 3rem auto;
-    background-color: ${({ theme }) => theme.mainColor};
-    padding: 1rem 3rem;
+  p {
+    margin: 1rem 3rem;
     font-size: 1.2rem;
-    text-transform: uppercase;
-    color: white;
-    border: 0;
-    border-radius: 0.3rem;
-    display: block;
+    text-align: left;
+    line-height: 2rem;
   }
 
   @media ${QUERIES.mobileAndLess} {

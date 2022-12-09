@@ -10,6 +10,7 @@ import SMyTodo from './style';
 import Header from '../../Components/Header/index';
 import Main from '../../Components/Main';
 import SideBar from '../../Components/SideBar';
+import Footer from 'Components/Footer';
 
 export default function MyTodo(): JSX.Element {
   const router = useRouter();
@@ -89,6 +90,7 @@ export default function MyTodo(): JSX.Element {
           <SideBar />
           <Main />
         </div>
+        <Footer />
       </SMyTodo>
     );
   }

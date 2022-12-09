@@ -1,16 +1,13 @@
 import styled from 'styled-components';
-import QUERIES from '../../styles/constant';
 
-export default styled.nav`
-  width: 25vw;
-  min-width: 380px;
-  margin-left: 20px;
-  > * {
-    min-height: 60px;
-    width: 100%;
-    margin: 0;
-    padding: 1rem;
-  }
+export default styled.div`
+  background-color: white;
+
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 100px;
+  z-index: 3;
 
   .WrapperTasks {
     padding: 0;
@@ -18,40 +15,14 @@ export default styled.nav`
 
     background-color: ${({ theme }) => theme.mainColor};
 
-    margin-top: 10px;
     padding: 20px;
   }
 
   .WrapperTasksEnded {
     padding: 0;
     border-radius: 5px;
-
     background-color: rgba(101, 53, 202, 0.1);
-    margin-top: 10px;
     padding: 20px;
-  }
-
-  form {
-    border-bottom: 1px solid #e6e9ed;
-
-    .newTask {
-      width: 100%;
-      background: transparent;
-      border: none;
-    }
-
-    input {
-      padding-top: 0.5rem;
-    }
-    input:active {
-      background: transparent;
-      border: none;
-    }
-
-    input::placeholder {
-      color: ${({ theme }) => theme.fontColorLight};
-      font-size: 1rem;
-    }
   }
 
   h2 {
@@ -78,9 +49,5 @@ export default styled.nav`
       padding-right: 0.8rem;
       color: ${({ theme }) => theme.mainColor};
     }
-  }
-
-  @media ${QUERIES.mobileAndLess} {
-    display: none;
   }
 `;
