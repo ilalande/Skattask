@@ -5,8 +5,9 @@ import { toast } from 'react-toastify';
 import SLogin from './style';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
-import { getLoggedUser } from '@redux/actions/users.action';
+
 import Image from 'next/image';
+import Footer from 'Components/Footer';
 
 export default function Login(): JSX.Element {
   const router = useRouter();
@@ -81,6 +82,7 @@ export default function Login(): JSX.Element {
           </div>
         </>
       )}
+      <Footer />
     </SLogin>
   );
 }
