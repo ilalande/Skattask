@@ -22,7 +22,7 @@ body {
    background: ${({ theme }) => theme.body};
    color: ${({ theme }) => theme.fontColor};
    font-family:Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
-   height: 100vh;
+   height: 100%;
    font-size:16px;
    max-width: 1600px;
    margin:auto;
@@ -44,5 +44,15 @@ input, textarea, button {font-family: inherit}
     box-shadow: 0px 3px 10px #a3a4a5;
     text-align: center;
     font-size: 1.3rem;
+  }
+  a{
+cursor: pointer;
+text-decoration:none;
+color:black;
+
+  }
+  a:hover{
+  color:  ${({ theme }) => theme.mainColor};
+
   }
 `;
