@@ -33,7 +33,6 @@ export function* getTasksSaga() {
       const dataTasksFromApi: ITaskFromDb[] = res.data;
       // manageTasksDatas est une fonction définie pour transformer les données issues de la db en un objet + simple avec uniquement les données utiles dans le store dans un simple objet tasks (la réponse de la requête avec table liée donne un objet complexe)
       yield put(setTasksInStore(manageTasksDatas(dataTasksFromApi)));
-      yield toast('Bienvenue sur votre Dashboard');
     }
   } catch (error: any) {
     return toast(error.response.data.message);
