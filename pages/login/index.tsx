@@ -79,10 +79,10 @@ export default function Login(): JSX.Element {
                 <span>Se connecter avec Google</span>
               </button>
             </div>
+            <Footer />
           </div>
         </>
       )}
-      <Footer />
     </SLogin>
   );
 }

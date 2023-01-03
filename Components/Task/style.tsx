@@ -24,7 +24,7 @@ export default styled.div`
   }
   .taskTextEnded {
     text-decoration: line-through;
-    font-weight: 400;
+    font-weight: 300;
   }
   .taskText,
   .taskTextEnded {
