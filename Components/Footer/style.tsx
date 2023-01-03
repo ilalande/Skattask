@@ -10,6 +10,5 @@ export default styled.footer`
   .mainFooter {
     width: fit-content;
     margin-left: auto;
-    border: 1px solid red;
   }
 `;

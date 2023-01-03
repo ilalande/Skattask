@@ -6,12 +6,10 @@ export default styled.div`
   padding: 0rem;
   margin: 0;
 
-  border: 1px solid green;
   .central {
     min-height: 95vh;
     display: flex;
     align-items: center;
-    border: 1px solid red;
   }
   .container {
     margin: 0 auto;
