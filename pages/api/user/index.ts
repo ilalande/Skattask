@@ -1,4 +1,4 @@
-import { unstable_getServerSession } from 'next-auth/next';
+import { getServerSession } from 'next-auth/next';
 import { authOptions } from '../auth/[...nextauth]';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '@prisma';
@@ -7,7 +7,7 @@ export default async function readUsers(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const session = await unstable_getServerSession(req, res, authOptions);
+  const session = await getServerSession(req, res, authOptions);
   session;
   //APi non utilisée mais créée pour l'exercice
   if (session) {
